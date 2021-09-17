@@ -34,7 +34,19 @@ Gem::Specification.new do |s|
     end
   else
     Brakeman::GemDependencies.dev_dependencies(s) unless ENV['BM_PACKAGE']
-    Brakeman::GemDependencies.base_dependencies(s)
-    Brakeman::GemDependencies.extended_dependencies(s)
+    # Brakeman::GemDependencies.base_dependencies(s)
+    s.add_dependency "parallel", "~>1.20"
+    s.add_dependency "ruby_parser", "~>3.13"
+    s.add_dependency "ruby_parser-legacy", "~>1.0"
+    s.add_dependency "sexp_processor", "~> 4.7"
+    s.add_dependency "ruby2ruby", "~>2.4.0"
+    s.add_dependency "safe_yaml", ">= 1.0"
+    # Brakeman::GemDependencies.extended_dependencies(s)
+    s.add_dependency "terminal-table", "~>1.4"
+    s.add_dependency "highline", "~>2.0"
+    s.add_dependency "erubis", "~>2.6"
+    s.add_dependency "haml", "~>5.1"
+    s.add_dependency "slim", ">=1.3.6", "<=4.1"
+    s.add_dependency "rexml", "~>3.0"
   end
 end
